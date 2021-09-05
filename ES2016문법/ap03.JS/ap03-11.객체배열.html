@@ -78,3 +78,51 @@
 </body>
 
 </html>
+
+<script>
+    var objarray = [
+        { text: 'One', value: 'A' },
+        { text: 'Two', value: 'B' },
+        { text: 'Three', value: 'C' }
+    ];
+
+    debugger;
+
+    //
+    objarray[objarray.length] = { text: 'Four', value: 'D' }
+    console.log(objarray);
+    //
+    const findIndex = objarray.findIndex(item=>item.text === "Two")
+    objarray[findIndex] = {text : "2", value : "2"}
+    console.log(objarray)
+
+    //
+    let result = objarray.filter(item=>item['text'] === 'One');
+    console.log(result);
+
+    debugger;
+    //
+    objarray.splice(2,1);
+    console.log(objarray);
+
+    let deleteIndex = objarray.findIndex(item =>{
+        return item.text === 'Three' && value === 'C'
+    })
+
+    objarray.splice(deleteIndex,1);
+
+    result = objarray.map(( item, index )=> {
+        item['no'] = index+1
+        return item;
+    })
+    console.log(result)
+
+    debugger;
+    //
+    console.log(objarray)
+    result = objarray.reduce((pvalue, cvalue) => {
+        return pvalue.value + cvalue.value
+    })
+    console.log(result)
+
+</script>

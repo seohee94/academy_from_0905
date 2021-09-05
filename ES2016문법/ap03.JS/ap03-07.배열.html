@@ -205,4 +205,65 @@
     </body>
 </html>
 
-
+
+<script>
+    // 배열생성
+    let arr = [true, 100, 'two']
+    console.log(arr);
+
+    //배열요소 출력
+    console.log(arr[1])
+
+    //배열 요소 추가
+    arr[arr.length] = "three";
+    arr[arr.length] = undefined;
+    arr[arr.length] = "four";
+    arr[arr.length] = "aaa";
+    console.log(arr);
+
+    // 배열 요소 수정
+    arr[0] = "update";
+    console.log(arr);
+
+    // 배열 요소 삭제
+    arr.splice(2,1)
+    console.log(arr);
+
+    // 배열 검색 -- filiter를 사용
+    let arr2 = [1,3, 3784, 98, 842, 8230]
+    console.log(arr2.filter(item=>item>=100));
+
+    let arr3 = [1,3, 3784, 98, 842, 8230]
+    const arrFilter = arr3.filter( (value, index, arra) => {
+        return value > 100;
+    } )
+    console.log(arrFilter);
+
+    // 배열 정렬
+    const arrSort = arr.sort((a, b)=>{
+        return a-b;
+    })
+    console.log("arrSort : " , arrSort);
+
+    // 배열 복제
+    arr = [1,3, 3784, 98, 842, 8230]
+    const arrMap = arr.map( (value, index, array) => {
+        return value * 10;
+    })
+    console.log(arrMap);
+    // 배열이면 map을 쓰는 것이 가장 좋다
+
+    // reduce
+    arr = [1,3, 3784, 98, 842, 8230]
+    const sum = arr.reduce( (pvalue, cvalue, index, array) => {
+        return pvalue + cvalue;
+    })
+    console.log("sum : " + sum);
+
+    // 배열에서 98의 인덱스를 찾으시오 -- 첫번째 인덱스만 나온다
+    arr = [1,3, 3784, 98, 842, 8230, 98]
+    const index = arr.findIndex((value, index, array)=>{
+        return value === 98;
+    })
+    console.log(index);
+</script>

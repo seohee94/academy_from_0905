@@ -244,4 +244,55 @@
     </body>
 </html>
 
-
+<script>
+    // 객체 리터럴을 이용한 객체 선언
+    var foo = {
+        name : 'foo',
+        //run : function () { return this.name }
+        run() { return this.name; }
+    };
+    // R. 읽기 - 마침표 표기법
+    console.log(foo.name);
+
+    // R. 읽기 - 대괄호 표기법
+    console.log(foo['name']);
+
+    // RCUD : Create 추가
+    foo.gender = "man"
+    foo['nickname'] = "ba";
+    console.log(foo.gender);
+
+    // RCUD : Update 수정
+    foo.name = "bar";
+    foo['age'] = 50;
+    console.log(foo.name, foo['age']);
+
+    // RCUD : Delete 삭제
+    delete foo.age;
+    delete foo.gender;
+    console.log(foo.age);
+    console.log(foo.gender);
+
+    // 문제 1. 다음의 그림을 자바스크립트 객체로 만드시오
+
+    const Dog = {
+        name : 'Fido',
+        weight : 40,
+        bredd : "Mixed",
+        loves : ["walks", "fetching balls"],
+    }
+
+    console.log(Dog);
+
+    // 문제 2. 다음의 표를 자바스크립트 객체로 만드시오
+
+    const table = {
+        name : 'Nature of Code',
+        price : '30000',
+        writer : '다니엘',
+        ISBN : '9788968481901',
+        pageCount : 620,
+    }
+
+    console.log(Dog);
+</script>
